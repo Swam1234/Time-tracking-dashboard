@@ -1,0 +1,138 @@
+@import url("https://fonts.googleapis.com/css2?family=Audiowide&family=Rubik:wght@300;400;500&display=swap");
+
+@import "../bootstrap-5.2.0/scss/functions";
+
+//any default variables override here
+$primary: hsl(226, 43%, 10%);
+$secondary: hsl(235, 46%, 20%);
+$accent: hsl(246, 80%, 60%);
+$work-color: hsl(15, 100%, 70%);
+$play-color: hsl(195, 74%, 62%);
+$study-color: hsl(348, 100%, 68%);
+$exercise-color: hsl(145, 58%, 55%);
+$social-color: hsl(264, 64%, 52%);
+$self-care-color: hsl(43, 84%, 65%);
+$desaturated-blue: hsl(235, 45%, 61%);
+$pale-blue: hsl(236, 100%, 87%);
+
+$font-family-sans-serif: "Rubik", sans-serif;
+$body-bg: $primary;
+$card-border-radius: 0.8rem;
+$card-border-width: none;
+
+@import "../bootstrap-5.2.0/scss/variables";
+
+//any default maps override heres
+$theme-colors: (
+  "primary": $primary,
+  "secondary": $secondary,
+  "accent": $accent,
+  "work-color": $work-color,
+  "play-color": $play-color,
+  "study-color": $study-color,
+  "exercise-color": $exercise-color,
+  "social-color": $social-color,
+  "self-care-color": $self-care-color,
+  "desaturated-blue": $desaturated-blue,
+  "pale-blue": $pale-blue,
+);
+
+@import "../bootstrap-5.2.0/scss/maps";
+@import "../bootstrap-5.2.0/scss/mixins";
+@import "../bootstrap-5.2.0/scss/utilities";
+
+// Layout & components
+@import "../bootstrap-5.2.0/scss/root";
+@import "../bootstrap-5.2.0/scss/reboot";
+@import "../bootstrap-5.2.0/scss/type";
+@import "../bootstrap-5.2.0/scss/containers";
+@import "../bootstrap-5.2.0/scss/card";
+
+// Helpers
+@import "../bootstrap-5.2.0/scss/helpers";
+
+// Utilities
+@import "../bootstrap-5.2.0/scss/utilities/api";
+// scss-docs-end import-stack
+
+.card {
+  width: 220px;
+  margin: 0.8rem;
+  overflow: hidden;
+}
+
+#right-card-container > div > .card {
+  width: 220px;
+  height: 220px;
+}
+
+.profile-card {
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
+  height: 68%;
+}
+
+.h-32 {
+  height: 32%;
+}
+
+.card-img-svg {
+  position: absolute;
+  top: -10px;
+  right: 15px;
+  z-index: 1;
+}
+
+.card-content-container {
+  width: 100%;
+  height: 79%;
+  position: absolute;
+  bottom: 0px;
+  z-index: 2;
+  background-color: $secondary;
+  border-radius: $card-border-radius;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1.3rem;
+  transition: 0.3s ease;
+}
+
+.card-content-container:hover {
+  background-color: $desaturated-blue;
+  cursor: pointer;
+}
+
+#fist-card-footer > a {
+  text-decoration: none;
+  color: $desaturated-blue;
+  margin: 0.3rem 0;
+  font-size: 16px;
+  transition: 0.2s ease;
+}
+
+#fist-card-footer > a:hover {
+  color: $white;
+}
+
+.active {
+  color: $white !important;
+}
+
+@media screen and (max-width: 992px) {
+  #right-card-container {
+    width: 100vw;
+  }
+
+  #right-card-container > div {
+    width: 100%;
+  }
+
+  .card {
+    width: 80% !important;
+  }
+
+  #right-card-container > div > .card {
+    height: 175px !important;
+  }
+}
